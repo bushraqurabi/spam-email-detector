@@ -7,7 +7,7 @@ interface ResultDisplayProps {
 
 const ResultDisplay = ({ result }: ResultDisplayProps) => {
   const isSpam = result.prediction === '🚨 Spam';
-  const percentage = Math.round(result.confidence * 100);
+  const percentage = result.confidence;
 
   return (
     <div className={`result-display ${isSpam ? 'spam' : 'ham'}`}>
@@ -31,7 +31,7 @@ const ResultDisplay = ({ result }: ResultDisplayProps) => {
         <div className="percentage-bar">
           <div 
             className="percentage-fill" 
-            style={{ width: `${percentage}%` }}
+            style={{ width: `${percentage}` }}
           />
         </div>
       </div>
