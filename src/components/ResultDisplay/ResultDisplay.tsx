@@ -6,13 +6,13 @@ interface ResultDisplayProps {
 }
 
 const ResultDisplay = ({ result }: ResultDisplayProps) => {
-  const isSpam = result.prediction === 'spam';
+  const isSpam = result.prediction === '🚨 Spam';
   const percentage = Math.round(result.confidence * 100);
 
   return (
     <div className={`result-display ${isSpam ? 'spam' : 'ham'}`}>
       <div className="result-icon">
-        {isSpam ? '⚠️' : '✅'}
+        {isSpam ? '🚨' : '✅'}
       </div>
       
       <h2 className="result-title">

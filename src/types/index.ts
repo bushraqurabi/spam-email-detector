@@ -3,7 +3,7 @@ export interface SpamCheckRequest {
 }
 
 export interface SpamCheckResponse {
-  prediction: 'spam' | 'ham';
+  prediction: '🚨 Spam' | '✅ Ham';
   confidence: number;
   is_spam: boolean;
 }
