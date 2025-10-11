@@ -6,8 +6,8 @@ interface ResultDisplayProps {
 }
 
 const ResultDisplay = ({ result }: ResultDisplayProps) => {
-  const isSpam = result.result === 'spam';
-  const percentage = Math.round(result.percentage);
+  const isSpam = result.prediction === 'spam';
+  const percentage = Math.round(result.confidence * 100);
 
   return (
     <div className={`result-display ${isSpam ? 'spam' : 'ham'}`}>
@@ -40,7 +40,7 @@ const ResultDisplay = ({ result }: ResultDisplayProps) => {
         <div className="detail-item">
           <span className="detail-label">Classification:</span>
           <span className={`detail-value ${isSpam ? 'spam-text' : 'ham-text'}`}>
-            {result.result.toUpperCase()}
+            {result.prediction.toUpperCase()}
           </span>
         </div>
       </div>
