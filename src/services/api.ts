@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { SpamCheckRequest, SpamCheckResponse } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://spam-email-api-sog1.onrender.com';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -11,8 +11,9 @@ const apiClient = axios.create({
 });
 
 export const checkSpamEmail = async (email: string): Promise<SpamCheckResponse> => {
-  const response = await apiClient.post<SpamCheckResponse>('/check-spam', {
-    email,
+  const response = await apiClient.post<SpamCheckResponse>('/predict', {
+    email_text: email,
   } as SpamCheckRequest);
+  console.log(response);
   return response.data;
 };

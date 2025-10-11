@@ -1,10 +1,11 @@
 export interface SpamCheckRequest {
-  email: string;
+  email_text: string;
 }
 
 export interface SpamCheckResponse {
-  result: 'spam' | 'ham';
-  percentage: number;
+  prediction: 'spam' | 'ham';
+  confidence: number;
+  is_spam: boolean;
 }
 
 export interface ApiError {
