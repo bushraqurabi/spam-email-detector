@@ -1,6 +1,6 @@
 # 🛡️ Spam Email Detector
 
-A modern, beautiful React TypeScript application for detecting spam emails using AI-powered analysis.
+A modern, beautiful React TypeScript application for detecting spam emails using AI-powered analysis with high accuracy (up to 97% using Logistic Regression).
 
 ## ✨ Features
 
